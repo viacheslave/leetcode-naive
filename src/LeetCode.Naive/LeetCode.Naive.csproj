@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Problems\_0175.sql" />
+    <None Remove="Problems\_0176.sql" />
+    <None Remove="Problems\_0177.sql" />
+    <None Remove="Problems\_0178.sql" />
+    <None Remove="Problems\_0181.sql" />
+    <None Remove="Problems\_0182.sql" />
+    <None Remove="Problems\_0183.sql" />
+    <None Remove="Problems\_0184.sql" />
+    <None Remove="Problems\_0197.sql" />
+    <None Remove="Problems\_0262.sql" />
+    <None Remove="Problems\_0595.sql" />
+    <None Remove="Problems\_0596.sql" />
+    <None Remove="Problems\_0620.sql" />
+    <None Remove="Problems\_0626.sql" />
+    <None Remove="Problems\_0627.sql" />
+  </ItemGroup>
+
+</Project>
