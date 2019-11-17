@@ -59,4 +59,4 @@ src/export/*
 /src/.vs
 /src/LeetCode.Naive/bin
 /src/LeetCode.Naive/obj
-/.vs/LeetCode.Naive/v16/Server/sqlite3
+/.vs/
