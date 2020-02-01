@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Problems\P0195.sh" />
     <None Remove="Problems\_0175.sql" />
     <None Remove="Problems\_0176.sql" />
     <None Remove="Problems\_0177.sql" />
@@ -21,6 +22,10 @@
     <None Remove="Problems\_0620.sql" />
     <None Remove="Problems\_0626.sql" />
     <None Remove="Problems\_0627.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Problems\P0195.sh" />
   </ItemGroup>
 
 </Project>
