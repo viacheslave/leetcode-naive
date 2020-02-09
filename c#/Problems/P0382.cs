@@ -21,7 +21,7 @@ namespace LeetCode.Naive.Problems.Easy
 
 		public ListNode _head;
 
-		public _0382(ListNode head)
+		public P0382(ListNode head)
 		{
 			if (head == null)
 				return;

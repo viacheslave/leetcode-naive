@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Naive.Problems.Easy
+﻿using System.Linq;
+
+namespace LeetCode.Naive.Problems.Easy
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/find-numbers-with-even-number-of-digits/

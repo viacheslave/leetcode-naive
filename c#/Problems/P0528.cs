@@ -16,7 +16,7 @@ namespace LeetCode.Naive.Problems.Easy
 		private readonly int _sum;
 		private readonly Random _random = new Random();
 
-		public _0528(int[] w)
+		public P0528(int[] w)
 		{
 			_w = w;
 			_sum = w.Sum();

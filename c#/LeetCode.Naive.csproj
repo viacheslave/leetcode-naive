@@ -25,9 +25,4 @@
     <None Remove="Problems\_0627.sql" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="Problems\P0193.sh" />
-    <Compile Include="Problems\P0195.sh" />
-  </ItemGroup>
-
 </Project>

@@ -48,25 +48,5 @@ namespace LeetCode.Naive.Problems.Easy
 
 			return maxProfit;
 		}
-		{
-			List<IList<int>> result = new List<IList<int>>();
-
-			for (var i = 0; i <= rowIndex; i++)
-			{
-				List<int> arr = new List<int>() { 1 };
-
-				for (var j = 1; j < i + 1; j++)
-				{
-					var left = result[i - 1][j - 1];
-					var right = result[i - 1].Count > j ? result[i - 1][j] : 0;
-
-					arr.Add(left + right);
-				}
-
-				result.Add(arr);
-			}
-
-			return result[result.Count - 1];
-		}
 	}
 }

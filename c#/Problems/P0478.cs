@@ -17,7 +17,7 @@ namespace LeetCode.Naive.Problems.Easy
 		private readonly double _r;
 		private (double, double) _c;
 
-		public _0478(double radius, double x_center, double y_center)
+		public P0478(double radius, double x_center, double y_center)
 		{
 			_r = radius;
 			_c = (x_center, y_center);

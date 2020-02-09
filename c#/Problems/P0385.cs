@@ -85,4 +85,31 @@ namespace LeetCode.Naive.Problems.Easy
 			return (new NestedInteger(int.Parse(s)), end);
 		}
 	}
+
+	//
+	class NestedInteger
+	{
+		// Constructor initializes an empty nested list.
+		public NestedInteger() => throw new NotImplementedException();
+
+		// Constructor initializes a single integer.
+		public NestedInteger(int value) => throw new NotImplementedException();
+
+		// @return true if this NestedInteger holds a single integer, rather than a nested list.
+		public bool IsInteger() => throw new NotImplementedException();
+
+		// @return the single integer that this NestedInteger holds, if it holds a single integer
+		// Return null if this NestedInteger holds a nested list
+		public int GetInteger() => throw new NotImplementedException();
+
+		// Set this NestedInteger to hold a single integer.
+		public void SetInteger(int value) => throw new NotImplementedException();
+
+		// Set this NestedInteger to hold a nested list and adds a nested integer to it.
+		public void Add(NestedInteger ni) => throw new NotImplementedException();
+
+		// @return the nested list that this NestedInteger holds, if it holds a nested list
+		// Return null if this NestedInteger holds a single integer
+		public IList<NestedInteger> GetList() => throw new NotImplementedException();
+	}
 }

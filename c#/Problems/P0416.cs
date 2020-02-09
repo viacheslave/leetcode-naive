@@ -1,4 +1,7 @@
-﻿namespace LeetCode.Naive.Problems.Easy
+﻿using System;
+using System.Linq;
+
+namespace LeetCode.Naive.Problems.Easy
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/partition-equal-subset-sum/

@@ -16,7 +16,7 @@ namespace LeetCode.Naive.Problems.Easy
 		private readonly int _count;
 		private readonly Random _random = new Random();
 
-		public _0497(int[][] rects)
+		public P0497(int[][] rects)
 		{
 			_rects = rects;
 

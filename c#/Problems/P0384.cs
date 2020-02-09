@@ -15,7 +15,7 @@ namespace LeetCode.Naive.Problems.Easy
 		List<int> original;
 		Random rnd = new Random((int)DateTime.Now.Ticks);
 
-		public _0384(int[] nums)
+		public P0384(int[] nums)
 		{
 			original = new List<int>(nums);
 		}
