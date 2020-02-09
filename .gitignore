@@ -56,7 +56,7 @@ src/bin/*
 src/export/*
 
 *.suo
-/src/.vs
-/src/LeetCode.Naive/bin
-/src/LeetCode.Naive/obj
 /.vs/
+/c#/.vs/*
+/c#/obj/*
+/c#/bin/*
