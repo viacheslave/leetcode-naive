@@ -5,11 +5,11 @@ using System.Text;
 
 namespace LeetCode.Naive.Problems.Easy
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/remove-palindromic-subsequences/
-	///		Submission: https://leetcode.com/submissions/detail/297532395/
-	/// </summary>
-	internal class P1342
+  /// <summary>
+  ///		Problem: https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+  ///		Submission: https://leetcode.com/submissions/detail/301633536/
+  /// </summary>
+  internal class P1342
 	{
 		public int NumberOfSteps (int num) {
         var ans = 0;
