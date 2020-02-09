@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+/*
+ * Problem: https://leetcode.com/problems/employee-importance/
+ * Submission: https://leetcode.com/submissions/detail/234432683/
+ */
 class P0690 {
     public int getImportance(List<Employee> employees, int id) {
         HashSet<Integer> processed = new HashSet<Integer>();

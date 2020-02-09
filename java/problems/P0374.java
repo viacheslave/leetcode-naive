@@ -1,5 +1,9 @@
 package problems;
 
+/*
+ * Problem: https://leetcode.com/problems/guess-number-higher-or-lower/
+ * Submission: https://leetcode.com/submissions/detail/231116531/
+ */
 class P0374 {
     public class Solution extends GuessGame {
         public int guessNumber(int n) {
