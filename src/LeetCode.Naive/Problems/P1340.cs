@@ -9,7 +9,7 @@ namespace LeetCode.Naive.Problems.Easy
 	///		Problem: https://leetcode.com/problems/jump-game-v/
 	///		Submission: https://leetcode.com/submissions/detail/299640641/
 	/// </summary>
-	internal class P1344
+	internal class P1340
 	{
     public int MaxJumps(int[] arr, int d)
     {

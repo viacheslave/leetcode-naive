@@ -9,7 +9,7 @@ namespace LeetCode.Naive.Problems.Easy
 	///		Problem: https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
 	///		Submission: https://leetcode.com/submissions/detail/289433999/
 	/// </summary>
-	internal class P5295
+	internal class P1304
 	{
 		public int[] SumZero(int n)
 		{

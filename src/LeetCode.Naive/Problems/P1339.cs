@@ -9,7 +9,7 @@ namespace LeetCode.Naive.Problems.Easy
 	///		Problem: https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
 	///		Submission: https://leetcode.com/submissions/detail/299633859/
 	/// </summary>
-	internal class P1343
+	internal class P1339
 	{
 		public int MaxProduct(TreeNode root)
 		{

@@ -9,7 +9,7 @@ namespace LeetCode.Naive.Problems.Easy
 	///		Problem: https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
 	///		Submission: https://leetcode.com/submissions/detail/289438262/
 	/// </summary>
-	internal class P5296
+	internal class P1305
 	{
 		public IList<int> GetAllElements(TreeNode root1, TreeNode root2)
 		{

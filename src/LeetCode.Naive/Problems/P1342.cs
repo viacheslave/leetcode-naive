@@ -6,28 +6,22 @@ using System.Text;
 namespace LeetCode.Naive.Problems.Easy
 {
 	/// <summary>
-	///		Problem: https://leetcode.com/problems/reduce-array-size-to-the-half/
-	///		Submission: https://leetcode.com/submissions/detail/299626437/
+	///		Problem: https://leetcode.com/problems/remove-palindromic-subsequences/
+	///		Submission: https://leetcode.com/submissions/detail/297532395/
 	/// </summary>
 	internal class P1342
 	{
-		public int MinSetSize(int[] arr)
-		{
-			var counts = arr.GroupBy(a => a).Select(a => a.Count()).OrderByDescending(a => a).ToList();
-
-			var total = 0;
-			var ans = 0;
-
-			for (int i = 0; i < counts.Count; i++)
-			{
-				total += counts[i];
-				ans++;
-
-				if (total >= arr.Length / 2)
-					break;
-			}
-
-			return ans;
-		}
+		public int NumberOfSteps (int num) {
+        var ans = 0;
+        while (num > 0) {
+            if (num % 2 == 0) {
+                num >>= 1;
+            } else {
+                num -= 1;
+            }
+            ans++;
+        }
+        return ans;
+    }
 	}
 }
