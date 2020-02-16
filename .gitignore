@@ -60,3 +60,6 @@ src/export/*
 /c#/.vs/*
 /c#/obj/*
 /c#/bin/*
+/c#/obj/*
+/java/.idea/*
+/java/problems/.idea/*
