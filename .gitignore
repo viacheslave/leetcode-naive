@@ -41,25 +41,8 @@
 *.su
 *.idb
 *.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-.vscode/*
-src/obj/*
-src/bin/*
-src/export/*
-
-*.suo
-/.vs/
 /c#/.vs/*
 /c#/obj/*
-/c#/bin/*
-/c#/obj/*
 /java/.idea/*
-/java/problems/.idea/*
+/java/problems/*
+/c#/**/Debug/*

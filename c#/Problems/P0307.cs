@@ -11,40 +11,42 @@ namespace LeetCode.Naive.Problems.Easy
 	/// </summary>
 	internal class P0307
 	{
-    private int[] nums;
-    private int[] rangeSum;
+    public class NumArray
+		{
+      private int[] nums;
+      private int[] rangeSum;
 
-    public NumArray(int[] nums)
-    {
-      this.nums = nums;
-      this.rangeSum = new int[nums.Length];
-      BuildRanges(0);
-    }
+      public NumArray(int[] nums)
+      {
+        this.nums = nums;
+        this.rangeSum = new int[nums.Length];
+        BuildRanges(0);
+      }
 
-    public void Update(int i, int val)
-    {
-      nums[i] = val;
-      BuildRanges(i);
-    }
+      public void Update(int i, int val)
+      {
+        nums[i] = val;
+        BuildRanges(i);
+      }
 
-    public int SumRange(int i, int j)
-    {
-      if (i == 0)
-        return rangeSum[j];
-
-      return rangeSum[j] - rangeSum[i - 1];
-    }
-
-    private void BuildRanges(int start)
-    {
-      for (int i = start; i < nums.Length; i++)
+      public int SumRange(int i, int j)
       {
         if (i == 0)
-          rangeSum[i] = nums[i];
-        else
-          rangeSum[i] = rangeSum[i - 1] + nums[i];
+          return rangeSum[j];
+
+        return rangeSum[j] - rangeSum[i - 1];
+      }
+
+      private void BuildRanges(int start)
+      {
+        for (int i = start; i < nums.Length; i++)
+        {
+          if (i == 0)
+            rangeSum[i] = nums[i];
+          else
+            rangeSum[i] = rangeSum[i - 1] + nums[i];
+        }
       }
     }
   }
-}
 }

@@ -22,7 +22,7 @@ namespace LeetCode.Naive.Problems.Easy
           Traverse(nodes, i, leftChild, rightChild);
         }
 
-        var root = nodes.Single(n => n.parent == null);
+        var root = nodes.Single(r => r.parent == null);
         return true;
       }
       catch
