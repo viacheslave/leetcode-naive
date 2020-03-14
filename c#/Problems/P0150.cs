@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCode.Naive.Problems.Easy
+namespace LeetCode.Naive.Problems
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/evaluate-reverse-polish-notation/

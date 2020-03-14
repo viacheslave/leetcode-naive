@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LeetCode.Naive.Problems.Easy
+namespace LeetCode.Naive.Problems
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/all-elements-in-two-binary-search-trees/

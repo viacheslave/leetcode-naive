@@ -4,7 +4,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 
-namespace LeetCode.Naive.Problems.Easy
+namespace LeetCode.Naive.Problems
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/projection-area-of-3d-shapes/

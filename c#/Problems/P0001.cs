@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Naive.Problems.Easy
+﻿namespace LeetCode.Naive.Problems
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/roman-to-integer/

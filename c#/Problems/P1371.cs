@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LeetCode.Naive.Problems.Easy
+namespace LeetCode.Naive.Problems
 {
 	/// <summary>
 	///		Problem: https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/
@@ -57,6 +57,19 @@ namespace LeetCode.Naive.Problems.Easy
       }
 
       return max;
+    }
+
+    public int GetCh(char ch)
+    {
+      switch (ch)
+      {
+        case 'a': return 16;
+        case 'e': return 8;
+        case 'i': return 4;
+        case 'o': return 2;
+        case 'u': return 1;
+        default: return 0;
+      }
     }
   }
 }
