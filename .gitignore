@@ -44,6 +44,5 @@
 /c#/.vs/*
 /c#/obj/*
 /java/.idea/*
-/java/problems/*
 /c#/**/Debug/*
 /c#/obj/LeetCode.Naive.*
