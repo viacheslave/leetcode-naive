@@ -1,31 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj": {}
+    "e:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj": {}
   },
   "projects": {
-    "E:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj": {
+    "e:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj",
+        "projectUniqueName": "e:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj",
         "projectName": "LeetCode.Naive",
-        "projectPath": "E:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj",
+        "projectPath": "e:\\Dev\\leetcode.naive\\c#\\LeetCode.Naive.csproj",
         "packagesPath": "C:\\Users\\vyajo\\.nuget\\packages\\",
-        "outputPath": "E:\\Dev\\leetcode.naive\\c#\\obj\\",
+        "outputPath": "e:\\Dev\\leetcode.naive\\c#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vyajo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -36,15 +36,7 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
-          "dependencies": {
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            }
-          },
+        "netcoreapp3.1": {
           "imports": [
             "net461",
             "net462",
@@ -55,7 +47,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
