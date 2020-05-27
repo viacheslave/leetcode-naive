@@ -41,8 +41,8 @@
 *.su
 *.idb
 *.pdb
-/c#/.vs/*
-/c#/obj/*
-/java/.idea/*
-/c#/**/Debug/*
-/c#/obj/LeetCode.Naive.*
+.vs
+bin/
+obj
+.vscode
+.idea
