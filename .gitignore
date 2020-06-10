@@ -46,3 +46,4 @@ bin/
 obj
 .vscode
 .idea
+/java/out

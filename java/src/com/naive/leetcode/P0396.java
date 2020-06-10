@@ -1,4 +1,4 @@
-package problems;
+package com.naive.leetcode;
 
 /*
  * Problem: https://leetcode.com/problems/rotate-function/

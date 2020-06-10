@@ -1,4 +1,4 @@
-package problems;
+package com.naive.leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,11 +8,11 @@ import java.util.List;
  * Problem: https://leetcode.com/problems/product-of-the-last-k-numbers/
  * Submission: https://leetcode.com/submissions/detail/303785593/
  */
-class ProductOfNumbers {
+class P1352 {
     int pref[] = new int[40000];
     int index = 0;
     
-    public ProductOfNumbers() {
+    public P1352() {
         
     }
     

@@ -1,4 +1,4 @@
-package problems;
+package com.naive.leetcode;
 
 /*
  * Problem: https://leetcode.com/problems/guess-number-higher-or-lower/

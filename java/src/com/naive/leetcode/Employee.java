@@ -1,4 +1,4 @@
-package problems;
+package com.naive.leetcode;
 
 import java.util.List;
 
