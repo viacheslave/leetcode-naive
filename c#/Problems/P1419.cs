@@ -70,5 +70,13 @@ namespace LeetCode.Naive.Problems
 
       return ans;
     }
+
+    private static void Inc(Dictionary<char, int> data, char ch)
+    {
+      if (!data.ContainsKey(ch))
+        data[ch] = 0;
+
+      data[ch]++;
+    }
   }
 }
