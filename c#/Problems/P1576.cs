@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 
-namespace LeetCode.Naive
+namespace LeetCode.Naive.Problems
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-		}
-	}
-
-	public class Solution
+	/// <summary>
+	///		Problem: https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
+	///		Submission: https://leetcode.com/submissions/detail/393838039/
+	/// </summary>
+	internal class P1576
 	{
 		public string ModifyString(string s)
 		{
