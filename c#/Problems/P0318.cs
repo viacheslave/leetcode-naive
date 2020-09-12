@@ -5,11 +5,11 @@ using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/maximum-product-of-word-lengths/
-	///		Submission: https://leetcode.com/submissions/detail/394667554/
-	/// </summary>
-	internal class P0318
+  /// <summary>
+  ///		Problem: https://leetcode.com/problems/maximum-product-of-word-lengths/
+  ///		Submission: https://leetcode.com/submissions/detail/394667554/
+  /// </summary>
+  internal class P0318
 	{
 		public int MaxProduct(string[] words)
 		{
