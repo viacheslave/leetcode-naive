@@ -6,7 +6,7 @@ using System.Text;
 namespace LeetCode.Naive.Problems
 {
 	/// <summary>
-	///		Problem: https://leetcode.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/submissions/
+	///		Problem: https://leetcode.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/
 	///		Submission: https://leetcode.com/submissions/detail/345044821/
 	/// </summary>
 	internal class P1452
