@@ -1,9 +1,5 @@
 package com.naive.leetcode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-
 /**
  * Problem: https://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/
  * Submission: https://leetcode.com/submissions/detail/385308073/

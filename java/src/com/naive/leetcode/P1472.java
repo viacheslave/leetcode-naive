@@ -1,7 +1,6 @@
 package com.naive.leetcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Problem: https://leetcode.com/problems/design-browser-history/

@@ -2,7 +2,6 @@ package com.naive.leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
 /*
  * Problem: https://leetcode.com/problems/cinema-seat-allocation/

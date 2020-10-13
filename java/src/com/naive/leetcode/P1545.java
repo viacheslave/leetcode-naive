@@ -1,9 +1,5 @@
 package com.naive.leetcode;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 /**
  * Problem: https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/
  * Submission: https://leetcode.com/submissions/detail/378325866/

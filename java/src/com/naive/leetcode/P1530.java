@@ -1,9 +1,6 @@
 package com.naive.leetcode;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashSet;
-import java.util.List;
 
 /**
  * Problem: https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/

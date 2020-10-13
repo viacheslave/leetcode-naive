@@ -1,7 +1,6 @@
 package com.naive.leetcode;
 
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.HashSet;
 import java.util.List;
 

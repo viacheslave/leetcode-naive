@@ -1,7 +1,6 @@
 package com.naive.leetcode;
 
 import java.util.BitSet;
-import java.util.HashSet;
 
 /**
  * Problem: https://leetcode.com/problems/bulb-switcher-iv/

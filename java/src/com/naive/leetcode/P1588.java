@@ -1,10 +1,5 @@
 package com.naive.leetcode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.TreeMap;
-
 /**
  * Problem: https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
  * Submission: https://leetcode.com/submissions/detail/399258336/

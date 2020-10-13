@@ -1,8 +1,5 @@
 package com.naive.leetcode;
 
-import java.util.HashSet;
-import java.util.TreeMap;
-
 /**
  * Problem: https://leetcode.com/problems/maximum-product-subarray/
  * Submission: https://leetcode.com/submissions/detail/394159399/
