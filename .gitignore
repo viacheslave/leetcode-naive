@@ -47,3 +47,4 @@ obj
 .vscode
 .idea
 /java/out
+/java/**/*.class
