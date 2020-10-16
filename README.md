@@ -1,7 +1,11 @@
 # LeetCode solutions
 
-### Description
+## Description
 
-Leetcode solutions - as they're submitted and accepted. Fast, fun and dirty.
+My personal `leetcode` solutions to some of the problems.
+Mostly `C#`. Some problems are in `Java`, `SQL` and `bash`.
 
-Most of the solutions are in C#, except for those that require Bash, SQL. A small set is in Java for performance reasons.
+## Note
+This is for fun.
+I don't spend much time on a problem, so the solutions often are not optimized, code style is not consistent.
+Solutions should just work and pass tests.
