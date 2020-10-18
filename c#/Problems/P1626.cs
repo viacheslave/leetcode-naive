@@ -11,29 +11,32 @@ namespace LeetCode.Naive.Problems
   /// </summary>
   internal class P1626
   {
-    public int BestTeamScore(int[] scores, int[] ages)
+    public class Solution
     {
-      var dp = new int[scores.Length];
-
-      scores = Enumerable.Range(0, scores.Length)
-        .Select(i => (i, score: scores[i], age: ages[i]))
-        .OrderByDescending(a => a.age)
-        .ThenByDescending(a => a.score)
-        .Select(c => c.score)
-        .ToArray();
-
-      for (var i = 0; i < scores.Length; i++)
+      public int BestTeamScore(int[] scores, int[] ages)
       {
-        var value = scores[i];
+        var dp = new int[scores.Length];
 
-        for (var j = i - 1; j >= 0; j--)
-          if (scores[j] >= scores[i])
-            value = Math.Max(value, dp[j] + scores[i]);
+        scores = Enumerable.Range(0, scores.Length)
+          .Select(i => (i, score: scores[i], age: ages[i]))
+          .OrderByDescending(a => a.age)
+          .ThenByDescending(a => a.score)
+          .Select(c => c.score)
+          .ToArray();
 
-        dp[i] = value;
+        for (var i = 0; i < scores.Length; i++)
+        {
+          var value = scores[i];
+
+          for (var j = i - 1; j >= 0; j--)
+            if (scores[j] >= scores[i])
+              value = Math.Max(value, dp[j] + scores[i]);
+
+          dp[i] = value;
+        }
+
+        return dp.Max();
       }
-
-      return dp.Max();
     }
   }
 }

@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/decode-ways-ii/
-	///		Submission: https://leetcode.com/submissions/detail/333881254/
-	/// </summary>
-	internal class P0639
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/decode-ways-ii/
+  ///    Submission: https://leetcode.com/submissions/detail/333881254/
+  /// </summary>
+  internal class P0639
+  {
     public int NumDecodings(string s)
     {
       var dp = new int[s.Length + 1];

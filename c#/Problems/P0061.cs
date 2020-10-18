@@ -1,61 +1,64 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/rotate-list/
-	///		Submission: https://leetcode.com/submissions/detail/228462703/
-	/// </summary>
-	internal class P0061
-	{
-		public ListNode RotateRight(ListNode head, int k)
-		{
-			if (head == null || head.next == null)
-				return head;
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/rotate-list/
+  ///    Submission: https://leetcode.com/submissions/detail/228462703/
+  /// </summary>
+  internal class P0061
+  {
+    public class Solution
+    {
+      public ListNode RotateRight(ListNode head, int k)
+      {
+        if (head == null || head.next == null)
+          return head;
 
-			var length = 0;
-			var current = head;
+        var length = 0;
+        var current = head;
 
-			while (current != null)
-			{
-				length++;
-				current = current.next;
-			}
+        while (current != null)
+        {
+          length++;
+          current = current.next;
+        }
 
-			ListNode prevNode = null;
-			current = head;
-			var tail = current;
+        ListNode prevNode = null;
+        current = head;
+        var tail = current;
 
-			k = k % length;
-			if (k == 0)
-				return head;
+        k = k % length;
+        if (k == 0)
+          return head;
 
-			var index = 0;
+        var index = 0;
 
-			while (current != null)
-			{
-				if (length - k - 1 == index)
-				{
-					prevNode = current;
-				}
+        while (current != null)
+        {
+          if (length - k - 1 == index)
+          {
+            prevNode = current;
+          }
 
-				index++;
+          index++;
 
-				if (current.next == null)
-					tail = current;
+          if (current.next == null)
+            tail = current;
 
-				current = current.next;
-			}
+          current = current.next;
+        }
 
 
-			var newhead = prevNode.next;
-			prevNode.next = null;
-			tail.next = head;
+        var newhead = prevNode.next;
+        prevNode.next = null;
+        tail.next = head;
 
-			return newhead;
-		}
-	}
+        return newhead;
+      }
+    }
+  }
 }

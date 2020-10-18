@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/apply-discount-every-n-orders/
-	///		Submission: https://leetcode.com/submissions/detail/306159678/
-	/// </summary>
-	internal class P1357
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/apply-discount-every-n-orders/
+  ///    Submission: https://leetcode.com/submissions/detail/306159678/
+  /// </summary>
+  internal class P1357
+  {
     public class Cashier
     {
 
@@ -28,7 +28,7 @@ namespace LeetCode.Naive.Problems
 
         for (var i = 0; i < products.Length; i++)
           _prices[products[i]] = prices[i];
-      }
+        }
 
       public double GetBill(int[] product, int[] amount)
       {
@@ -43,13 +43,13 @@ namespace LeetCode.Naive.Problems
 
         var dis = 1.0 - _discount / 100.0;
         return bill * dis;
+        }
       }
-    }
 
     /**
      * Your Cashier object will be instantiated and called as such:
      * Cashier obj = new Cashier(n, discount, products, prices);
      * double param_1 = obj.GetBill(product,amount);
      */
-  }
+    }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +11,27 @@ namespace LeetCode.Naive.Problems
   /// </summary>
   internal class P1624
   {
-    public int MaxLengthBetweenEqualCharacters(string s)
+    public class Solution
     {
-      var multiple = s.GroupBy(ch => ch)
-        .Where(c => c.Count() > 1)
-        .ToDictionary(c => c.Key, c => c.Count());
-
-      var maxDistance = int.MinValue;
-
-      foreach (var entry in multiple)
+      public int MaxLengthBetweenEqualCharacters(string s)
       {
-        var first = s.IndexOf(entry.Key);
-        var last = s.LastIndexOf(entry.Key);
+        var multiple = s.GroupBy(ch => ch)
+          .Where(c => c.Count() > 1)
+          .ToDictionary(c => c.Key, c => c.Count());
 
-        var distance = last - first - 1;
-        maxDistance = Math.Max(maxDistance, distance);
+        var maxDistance = int.MinValue;
+
+        foreach (var entry in multiple)
+        {
+          var first = s.IndexOf(entry.Key);
+          var last = s.LastIndexOf(entry.Key);
+
+          var distance = last - first - 1;
+          maxDistance = Math.Max(maxDistance, distance);
+        }
+
+        return maxDistance == int.MinValue ? -1 : maxDistance;
       }
-
-      return maxDistance == int.MinValue ? -1 : maxDistance;
     }
   }
 }

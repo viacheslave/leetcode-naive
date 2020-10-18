@@ -1,38 +1,41 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/build-an-array-with-stack-operations/
-	///		Submission: https://leetcode.com/submissions/detail/387701546/
-	/// </summary>
-	internal class P1441
-	{
-		public IList<string> BuildArray(int[] target, int n)
-		{
-			var ans = new List<string>();
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/build-an-array-with-stack-operations/
+  ///    Submission: https://leetcode.com/submissions/detail/387701546/
+  /// </summary>
+  internal class P1441
+  {
+    public class Solution
+    {
+      public IList<string> BuildArray(int[] target, int n)
+      {
+        var ans = new List<string>();
 
-			var current = 1;
+        var current = 1;
 
-			for (var i = 0; i < target.Length; i++)
-			{
-				var el = target[i];
+        for (var i = 0; i < target.Length; i++)
+        {
+          var el = target[i];
 
-				while (el != current)
-				{
-					ans.Add("Push");
-					ans.Add("Pop");
+          while (el != current)
+          {
+            ans.Add("Push");
+            ans.Add("Pop");
 
-					current++;
-				}
+            current++;
+          }
 
-				ans.Add("Push");
-				current++;
-			}
+          ans.Add("Push");
+          current++;
+        }
 
-			return ans;
-		}
-	}
+        return ans;
+      }
+    }
+  }
 }

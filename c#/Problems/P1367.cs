@@ -1,23 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/linked-list-in-binary-tree/
-	///		Submission: https://leetcode.com/submissions/detail/308311313/
-	/// </summary>
-	internal class P1367
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/linked-list-in-binary-tree/
+  ///    Submission: https://leetcode.com/submissions/detail/308311313/
+  /// </summary>
+  internal class P1367
+  {
     /**
     * Definition for singly-linked list.
     * public class ListNode {
     *     public int val;
     *     public ListNode next;
-    *     public ListNode(int x) { val = x; }
-    * }
+    *     public ListNode(int x) { val = x;   }
+    *   }
     */
     /**
      * Definition for a binary tree node.
@@ -25,8 +25,8 @@ namespace LeetCode.Naive.Problems
      *     public int val;
      *     public TreeNode left;
      *     public TreeNode right;
-     *     public TreeNode(int x) { val = x; }
-     * }
+     *     public TreeNode(int x) { val = x;   }
+     *   }
      */
     public class Solution
     {
@@ -42,10 +42,10 @@ namespace LeetCode.Naive.Problems
           var result = Check(node, head);
           if (result)
             return true;
-        }
+          }
 
         return false;
-      }
+        }
 
       private bool Check(TreeNode node, ListNode ll)
       {
@@ -58,10 +58,10 @@ namespace LeetCode.Naive.Problems
         if (node.val == ll.val)
         {
           return Check(node.left, ll.next) || Check(node.right, ll.next);
-        }
+          }
 
         return false;
-      }
+        }
 
       private void Traverse(TreeNode node, Dictionary<int, List<TreeNode>> map)
       {

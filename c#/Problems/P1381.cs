@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/design-a-stack-with-increment-operation/
-	///		Submission: https://leetcode.com/submissions/detail/312636531/
-	/// </summary>
-	internal class P1381
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/design-a-stack-with-increment-operation/
+  ///    Submission: https://leetcode.com/submissions/detail/312636531/
+  /// </summary>
+  internal class P1381
+  {
     public class CustomStack
     {
       private readonly LinkedList<int> _list = new LinkedList<int>();
@@ -19,7 +19,7 @@ namespace LeetCode.Naive.Problems
       public CustomStack(int maxSize)
       {
         this._maxSize = maxSize;
-      }
+        }
 
       public void Push(int x)
       {
@@ -27,7 +27,7 @@ namespace LeetCode.Naive.Problems
           return;
 
         _list.AddLast(x);
-      }
+        }
 
       public int Pop()
       {
@@ -38,7 +38,7 @@ namespace LeetCode.Naive.Problems
         _list.RemoveLast();
 
         return value;
-      }
+        }
 
       public void Increment(int k, int val)
       {

@@ -1,71 +1,74 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/subsets-ii/
-	///		Submission: https://leetcode.com/submissions/detail/241491587/
-	/// </summary>
-	internal class P0090
-	{
-		public IList<IList<int>> SubsetsWithDup(int[] nums)
-		{
-			Array.Sort(nums);
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/subsets-ii/
+  ///    Submission: https://leetcode.com/submissions/detail/241491587/
+  /// </summary>
+  internal class P0090
+  {
+    public class Solution
+    {
+      public IList<IList<int>> SubsetsWithDup(int[] nums)
+      {
+        Array.Sort(nums);
 
-			var filled = new List<int>();
+        var filled = new List<int>();
 
-			IList<IList<int>> res = new List<IList<int>>();
+        IList<IList<int>> res = new List<IList<int>>();
 
-			Rec(res, filled, nums, 0);
+        Rec(res, filled, nums, 0);
 
-			return res;
-		}
+        return res;
+      }
 
-		private void Rec(IList<IList<int>> res, List<int> filled, int[] nums, int start)
-		{
-			res.Add(GetRes(nums, filled));
+      private void Rec(IList<IList<int>> res, List<int> filled, int[] nums, int start)
+      {
+        res.Add(GetRes(nums, filled));
 
-			for (var i = start; i < nums.Length; i++)
-			{
-				if (filled.Contains(i))
-					continue;
+        for (var i = start; i < nums.Length; i++)
+        {
+          if (filled.Contains(i))
+            continue;
 
-				filled.Add(i);
+          filled.Add(i);
 
-				Rec(res, filled, nums, i + 1);
+          Rec(res, filled, nums, i + 1);
 
-				filled.Remove(i);
+          filled.Remove(i);
 
-				var current = i;
-				while ((current + 1) < nums.Length)
-				{
-					if (filled.Contains(current + 1))
-					{
-						current++;
-						continue;
-					}
+          var current = i;
+          while ((current + 1) < nums.Length)
+          {
+            if (filled.Contains(current + 1))
+            {
+              current++;
+              continue;
+            }
 
-					if (nums[current + 1] != nums[i])
-					{
-						break;
-					}
+            if (nums[current + 1] != nums[i])
+            {
+              break;
+            }
 
-					current++;
-					i = current;
-				}
-			}
-		}
+            current++;
+            i = current;
+          }
+        }
+      }
 
-		private List<int> GetRes(int[] nums, List<int> filled)
-		{
-			var cand = new List<int>();
-			for (var i = 0; i < filled.Count; i++)
-				cand.Add(nums[filled[i]]);
+      private List<int> GetRes(int[] nums, List<int> filled)
+      {
+        var cand = new List<int>();
+        for (var i = 0; i < filled.Count; i++)
+          cand.Add(nums[filled[i]]);
 
-			return cand;
-		}
-	}
+        return cand;
+      }
+    }
+  }
 }

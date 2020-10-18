@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/iterator-for-combination/submissions/
-	///		Submission: https://leetcode.com/submissions/detail/290527497/
-	/// </summary>
-	internal class P1286
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/iterator-for-combination/submissions/
+  ///    Submission: https://leetcode.com/submissions/detail/290527497/
+  /// </summary>
+  internal class P1286
+  {
     public class CombinationIterator
     {
       private readonly int combinationLength;
@@ -27,7 +27,7 @@ namespace LeetCode.Naive.Problems
         lastPossible = new string(characters.TakeLast(combinationLength).ToArray());
 
         enumerator = Get(new List<char>(), 0).GetEnumerator();
-      }
+        }
 
       public string Next()
       {
@@ -35,10 +35,10 @@ namespace LeetCode.Naive.Problems
         {
           last = enumerator.Current;
           return last;
-        }
+          }
 
         return null;
-      }
+        }
 
       private IEnumerable<string> Get(List<char> result, int index)
       {
@@ -53,13 +53,13 @@ namespace LeetCode.Naive.Problems
             yield return res;
 
           result.RemoveAt(result.Count - 1);
+          }
         }
-      }
 
       public bool HasNext()
       {
         return last == null || last != lastPossible;
+        }
       }
     }
-  }
 }

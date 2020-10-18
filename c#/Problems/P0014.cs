@@ -1,55 +1,58 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/longest-common-prefix/
-	///		Submission: https://leetcode.com/submissions/detail/230435803/
-	/// </summary>
-	internal class P0014
-	{
-		public string LongestCommonPrefix(string[] strs)
-		{
-			if (strs.Length == 0)
-				return "";
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/longest-common-prefix/
+  ///    Submission: https://leetcode.com/submissions/detail/230435803/
+  /// </summary>
+  internal class P0014
+  {
+    public class Solution
+    {
+      public string LongestCommonPrefix(string[] strs)
+      {
+        if (strs.Length == 0)
+          return "";
 
-			var maxIndex = 0;
+        var maxIndex = 0;
 
-			while (true)
-			{
-				var hs = new HashSet<char>();
+        while (true)
+        {
+          var hs = new HashSet<char>();
 
-				var empty = false;
+          var empty = false;
 
-				foreach (var str in strs)
-				{
-					if (maxIndex >= str.Length)
-					{
-						empty = true;
-						break;
-					}
+          foreach (var str in strs)
+          {
+            if (maxIndex >= str.Length)
+            {
+              empty = true;
+              break;
+            }
 
-					hs.Add(str[maxIndex]);
-				}
+            hs.Add(str[maxIndex]);
+          }
 
-				if (empty)
-					break;
+          if (empty)
+            break;
 
-				if (hs.Count == 0)
-					break;
+          if (hs.Count == 0)
+            break;
 
-				if (hs.Count > 1)
-					break;
+          if (hs.Count > 1)
+            break;
 
-				maxIndex++;
-			}
+          maxIndex++;
+        }
 
-			if (maxIndex == 0)
-				return "";
+        if (maxIndex == 0)
+          return "";
 
-			return strs[0].Substring(0, maxIndex);
-		}
-	}
+        return strs[0].Substring(0, maxIndex);
+      }
+    }
+  }
 }

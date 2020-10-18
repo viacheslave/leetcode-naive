@@ -1,71 +1,74 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
-	///		Submission: https://leetcode.com/submissions/detail/237983418/
-	/// </summary>
-	internal class P0235
-	{
-		private bool _found = false;
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+  ///    Submission: https://leetcode.com/submissions/detail/237983418/
+  /// </summary>
+  internal class P0235
+  {
+    public class Solution
+    {
+      private bool _found = false;
 
-		public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
-		{
-			var listP = new List<TreeNode>();
-			var listQ = new List<TreeNode>();
+      public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+      {
+        var listP = new List<TreeNode>();
+        var listQ = new List<TreeNode>();
 
-			_found = false;
-			Traverse(root, p, listP);
+        _found = false;
+        Traverse(root, p, listP);
 
-			_found = false;
-			Traverse(root, q, listQ);
+        _found = false;
+        Traverse(root, q, listQ);
 
-			var elCommon = root;
+        var elCommon = root;
 
-			while (listP.Count > 0 && listQ.Count > 0)
-			{
-				var elP = listP[0];
-				var elQ = listQ[0];
+        while (listP.Count > 0 && listQ.Count > 0)
+        {
+          var elP = listP[0];
+          var elQ = listQ[0];
 
-				listP.RemoveAt(0);
-				listQ.RemoveAt(0);
+          listP.RemoveAt(0);
+          listQ.RemoveAt(0);
 
-				if (elP != elQ)
-					return elCommon;
+          if (elP != elQ)
+            return elCommon;
 
-				elCommon = elP;
-			}
+          elCommon = elP;
+        }
 
-			return elCommon;
-		}
+        return elCommon;
+      }
 
-		private void Traverse(TreeNode node, TreeNode target, List<TreeNode> list)
-		{
-			if (node == null)
-				return;
+      private void Traverse(TreeNode node, TreeNode target, List<TreeNode> list)
+      {
+        if (node == null)
+          return;
 
-			if (node == target)
-			{
-				list.Add(node);
-				_found = true;
-			}
+        if (node == target)
+        {
+          list.Add(node);
+          _found = true;
+        }
 
-			if (_found)
-				return;
+        if (_found)
+          return;
 
-			list.Add(node);
+        list.Add(node);
 
-			Traverse(node.left, target, list);
-			if (_found) return;
+        Traverse(node.left, target, list);
+        if (_found) return;
 
-			Traverse(node.right, target, list);
-			if (_found) return;
+        Traverse(node.right, target, list);
+        if (_found) return;
 
-			list.RemoveAt(list.Count - 1);
-		}
-	}
+        list.RemoveAt(list.Count - 1);
+      }
+    }
+  }
 }

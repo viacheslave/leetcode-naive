@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,24 +6,27 @@ using System.Text;
 namespace LeetCode.Naive.Problems
 {
   /// <summary>
-	///		Problem: https://leetcode.com/problems/check-if-n-and-its-double-exist/submissions/
-	///		Submission: https://leetcode.com/submissions/detail/301636168/
-	/// </summary>
-	internal class P1346
+  ///    Problem: https://leetcode.com/problems/check-if-n-and-its-double-exist/submissions/
+  ///    Submission: https://leetcode.com/submissions/detail/301636168/
+  /// </summary>
+  internal class P1346
   {
-    public bool CheckIfExist(int[] arr)
+    public class Solution
     {
-      for (var i = 0; i < arr.Length; i++)
+      public bool CheckIfExist(int[] arr)
       {
-        for (var j = 0; j < arr.Length; j++)
+        for (var i = 0; i < arr.Length; i++)
         {
-          if (i == j) continue;
+          for (var j = 0; j < arr.Length; j++)
+          {
+            if (i == j) continue;
 
-          if (arr[i] * 2 == arr[j])
-            return true;
+            if (arr[i] * 2 == arr[j])
+              return true;
+          }
         }
+        return false;
       }
-      return false;
     }
   }
 }

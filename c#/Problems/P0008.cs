@@ -1,65 +1,68 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/string-to-integer-atoi/
-	///		Submission: https://leetcode.com/submissions/detail/232027701/
-	/// </summary>
-	internal class P0008
-	{
-		public int MyAtoi(string str)
-		{
-			str = str.TrimStart();
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/string-to-integer-atoi/
+  ///    Submission: https://leetcode.com/submissions/detail/232027701/
+  /// </summary>
+  internal class P0008
+  {
+    public class Solution
+    {
+      public int MyAtoi(string str)
+      {
+        str = str.TrimStart();
 
-			var neg = str.StartsWith("-");
+        var neg = str.StartsWith("-");
 
-			if (str.StartsWith("-") || str.StartsWith("+"))
-				str = str.Substring(1);
+        if (str.StartsWith("-") || str.StartsWith("+"))
+          str = str.Substring(1);
 
-			str = str.Split(new[] { ' ', '.' })[0];
+        str = str.Split(new[] { ' ', '.' })[0];
 
-			var index = 0;
-			while (index < str.Length)
-			{
-				if (!Char.IsDigit(str[index]))
-					break;
+        var index = 0;
+        while (index < str.Length)
+        {
+          if (!Char.IsDigit(str[index]))
+            break;
 
-				index++;
-			}
+          index++;
+        }
 
-			var end = index - 1;
-			index = 0;
+        var end = index - 1;
+        index = 0;
 
-			int value = 0;
-			int power = 0;
+        int value = 0;
+        int power = 0;
 
-			while (index <= end)
-			{
-				if (!Char.IsDigit(str[index]))
-					return 0;
+        while (index <= end)
+        {
+          if (!Char.IsDigit(str[index]))
+            return 0;
 
-				var digit = int.Parse(str[index].ToString());
+          var digit = int.Parse(str[index].ToString());
 
-				if (!neg && (long)value * 10 + digit > (long)int.MaxValue)
-				{
-					return int.MaxValue;
-				}
+          if (!neg && (long)value * 10 + digit > (long)int.MaxValue)
+          {
+            return int.MaxValue;
+          }
 
-				if (neg && (-1) * ((long)value * 10 + digit) < (long)int.MinValue)
-				{
-					return int.MinValue;
-				}
+          if (neg && (-1) * ((long)value * 10 + digit) < (long)int.MinValue)
+          {
+            return int.MinValue;
+          }
 
-				value = value * 10 + digit;
+          value = value * 10 + digit;
 
-				power++;
-				index++;
-			}
+          power++;
+          index++;
+        }
 
-			return value * (neg ? -1 : 1);
-		}
-	}
+        return value * (neg ? -1 : 1);
+      }
+    }
+  }
 }

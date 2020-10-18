@@ -1,24 +1,24 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/throne-inheritance/
-	///		Submission: https://leetcode.com/submissions/detail/401323779/
-	/// </summary>
-	internal class P1600
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/throne-inheritance/
+  ///    Submission: https://leetcode.com/submissions/detail/401323779/
+  /// </summary>
+  internal class P1600
+  {
     public class ThroneInheritance
     {
       private class TreeNode
       {
-        public string Name { get; }
-        public bool Alive { get; private set; } = true;
+        public string Name { get;   }
+        public bool Alive { get; private set;   } = true;
 
-        public IList<TreeNode> Children { get; } = new List<TreeNode>();
+        public IList<TreeNode> Children { get;   } = new List<TreeNode>();
 
         public void Die() => Alive = false;
 
@@ -45,7 +45,7 @@ namespace LeetCode.Naive.Problems
       public void Death(string name)
       {
         _map[name].Die();
-      }
+        }
 
       public IList<string> GetInheritanceOrder()
       {
@@ -53,7 +53,7 @@ namespace LeetCode.Naive.Problems
         Traverse(_root, order);
 
         return order;
-      }
+        }
 
       private void Traverse(TreeNode node, List<string> order)
       {

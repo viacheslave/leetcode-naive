@@ -5,20 +5,20 @@ using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/serialize-and-deserialize-bst/
-	///		Submission: https://leetcode.com/submissions/detail/406508882/
-	/// </summary>
-	internal class P0449
-	{
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/serialize-and-deserialize-bst/
+  ///    Submission: https://leetcode.com/submissions/detail/406508882/
+  /// </summary>
+  internal class P0449
+  {
     /**
      * Definition for a binary tree node.
      * public class TreeNode {
      *     public int val;
      *     public TreeNode left;
      *     public TreeNode right;
-     *     public TreeNode(int x) { val = x; }
-     * }
+     *     public TreeNode(int x) { val = x;   }
+     *   }
      */
 
     public class Codec
@@ -36,7 +36,7 @@ namespace LeetCode.Naive.Problems
         var res = Stringify(list);
 
         return res;
-      }
+        }
 
       // Decodes your encoded data to tree.
       public TreeNode deserialize(string data)
@@ -60,7 +60,7 @@ namespace LeetCode.Naive.Problems
             root = new TreeNode(val);
             stack.Push((root, 0));
             continue;
-          }
+            }
 
           while (stack.Peek().level != level - 1)
             stack.Pop();
@@ -80,11 +80,11 @@ namespace LeetCode.Naive.Problems
 
             if (level + 1 == nextLevel)
               stack.Push((node, level));
+            }
           }
-        }
 
         return root;
-      }
+        }
 
       private void Serialize(TreeNode node, List<string> list, string path)
       {
@@ -95,16 +95,16 @@ namespace LeetCode.Naive.Problems
 
         Serialize(node.left, list, path + "l");
         Serialize(node.right, list, path + "r");
-      }
+        }
 
       private string Stringify(List<string> list)
       {
         return string.Join(",", list);
+        }
       }
-    }
 
     // Your Codec object will be instantiated and called as such:
     // Codec codec = new Codec();
     // codec.deserialize(codec.serialize(root));
-  }
+    }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,33 +6,36 @@ using System.Text;
 namespace LeetCode.Naive.Problems
 {
   /// <summary>
-	///		Problem: https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
-	///		Submission: https://leetcode.com/submissions/detail/301669796/
-	/// </summary>
-	internal class P1347
+  ///    Problem: https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
+  ///    Submission: https://leetcode.com/submissions/detail/301669796/
+  /// </summary>
+  internal class P1347
   {
-    public int MinSteps(string s, string t)
+    public class Solution
     {
-      var mapS = s.GroupBy(ch => ch).ToDictionary(g => g.Key, g => g.Count());
-      var mapT = t.GroupBy(ch => ch).ToDictionary(g => g.Key, g => g.Count());
-
-      var diff = new Dictionary<char, int>();
-
-      foreach (var item in mapS)
-        if (!mapT.ContainsKey(item.Key))
-          diff[item.Key] = -item.Value;
-
-      foreach (var item in mapT)
-        if (!mapS.ContainsKey(item.Key))
-          diff[item.Key] = item.Value;
-
-      foreach (var item in mapT)
+      public int MinSteps(string s, string t)
       {
-        if (mapS.ContainsKey(item.Key))
-          diff[item.Key] = mapT[item.Key] - mapS[item.Key];
-      }
+        var mapS = s.GroupBy(ch => ch).ToDictionary(g => g.Key, g => g.Count());
+        var mapT = t.GroupBy(ch => ch).ToDictionary(g => g.Key, g => g.Count());
 
-      return diff.Where(x => x.Value > 0).Sum(x => x.Value);
+        var diff = new Dictionary<char, int>();
+
+        foreach (var item in mapS)
+          if (!mapT.ContainsKey(item.Key))
+            diff[item.Key] = -item.Value;
+
+        foreach (var item in mapT)
+          if (!mapS.ContainsKey(item.Key))
+            diff[item.Key] = item.Value;
+
+        foreach (var item in mapT)
+        {
+          if (mapS.ContainsKey(item.Key))
+            diff[item.Key] = mapT[item.Key] - mapS[item.Key];
+        }
+
+        return diff.Where(x => x.Value > 0).Sum(x => x.Value);
+      }
     }
   }
 }

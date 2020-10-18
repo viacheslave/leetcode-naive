@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -6,64 +6,67 @@ using System.Text;
 
 namespace LeetCode.Naive.Problems
 {
-	/// <summary>
-	///		Problem: https://leetcode.com/problems/largest-component-size-by-common-factor/
-	///		Submission: https://leetcode.com/submissions/detail/388454813/
-	/// </summary>
-	internal class P0952
-	{
-    public int LargestComponentSize(int[] A)
+  /// <summary>
+  ///    Problem: https://leetcode.com/problems/largest-component-size-by-common-factor/
+  ///    Submission: https://leetcode.com/submissions/detail/388454813/
+  /// </summary>
+  internal class P0952
+  {
+    public class Solution
     {
-      var map = new Dictionary<int, int>();
-
-      foreach (var num in A)
+      public int LargestComponentSize(int[] A)
       {
-        for (var div = 2; div * div <= num; div++)
+        var map = new Dictionary<int, int>();
+
+        foreach (var num in A)
         {
-          if (num % div == 0)
+          for (var div = 2; div * div <= num; div++)
           {
-            Union(num, div, map);
-            Union(num, num / div, map);
+            if (num % div == 0)
+            {
+              Union(num, div, map);
+              Union(num, num / div, map);
+            }
           }
         }
+
+        var maxMap = new Dictionary<int, int>();
+
+        foreach (var v in A)
+        {
+          var f = Find(v, map);
+
+          if (maxMap.ContainsKey(f))
+            maxMap[f]++;
+          else
+            maxMap[f] = 1;
+        }
+
+        var ans = maxMap.Max(v => v.Value);
+        return ans;
       }
 
-      var maxMap = new Dictionary<int, int>();
-
-      foreach (var v in A)
+      public void Union(int a1, int a2, Dictionary<int, int> p)
       {
-        var f = Find(v, map);
+        int p1 = Find(a1, p);
+        int p2 = Find(a2, p);
 
-        if (maxMap.ContainsKey(f))
-          maxMap[f]++;
+        if (p1 < p2)
+          p[p2] = p1;
         else
-          maxMap[f] = 1;
+          p[p1] = p2;
       }
 
-      var ans = maxMap.Max(v => v.Value);
-      return ans;
-    }
+      public int Find(int i, Dictionary<int, int> parent)
+      {
+        if (!parent.ContainsKey(i))
+          parent[i] = i;
 
-    public void Union(int a1, int a2, Dictionary<int, int> p)
-    {
-      int p1 = Find(a1, p);
-      int p2 = Find(a2, p);
+        while (i != parent[i])
+          i = parent[i];
 
-      if (p1 < p2)
-        p[p2] = p1;
-      else
-        p[p1] = p2;
-    }
-
-    public int Find(int i, Dictionary<int, int> parent)
-    {
-      if (!parent.ContainsKey(i))
-        parent[i] = i;
-
-      while (i != parent[i])
-        i = parent[i];
-
-      return i;
+        return i;
+      }
     }
   }
 }
