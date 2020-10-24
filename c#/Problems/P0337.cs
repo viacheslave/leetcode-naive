@@ -1,4 +1,7 @@
-﻿namespace LeetCode.Naive.Problems
+using System;
+using System.Collections.Generic;
+
+namespace LeetCode.Naive.Problems
 {
   /// <summary>
   ///    Problem: https://leetcode.com/problems/house-robber-iii/
