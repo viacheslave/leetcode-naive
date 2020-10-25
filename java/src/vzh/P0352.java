@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.TreeMap;
 
 /*
- * Problem: https://leetcode.com/problems/employee-importance/
- * Submission: https://leetcode.com/submissions/detail/234432683/
+ * Problem: https://leetcode.com/problems/data-stream-as-disjoint-intervals/
+ * Submission: https://leetcode.com/submissions/detail/413056773/
  */
-class P0359 {
+class P0352 {
   class SummaryRanges {
 
     TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
