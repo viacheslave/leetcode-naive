@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Naive.Problems
+using System.Collections.Generic;
+
+namespace LeetCode.Naive.Problems
 {
   /// <summary>
   ///    Problem: https://leetcode.com/problems/maximum-profit-of-operating-a-centennial-wheel/
@@ -60,4 +62,3 @@
       }
     }
   }
-}
