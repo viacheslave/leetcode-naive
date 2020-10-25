@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace LeetCode.Naive.Problems
 {
@@ -41,3 +41,4 @@ namespace LeetCode.Naive.Problems
       }
     }
   }
+}
