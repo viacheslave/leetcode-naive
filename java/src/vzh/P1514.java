@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.PriorityQueue;
 
 /*
- * Problem: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
- * Submission: https://leetcode.com/submissions/detail/381649264/
+ * Problem: https://leetcode.com/problems/path-with-maximum-probability/
+ * Submission: https://leetcode.com/submissions/detail/419889837/
  */
 public class P1514 {
   class Solution {
