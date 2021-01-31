@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Naive.Problems
+using System;
+
+namespace LeetCode.Naive.Problems
 {
   /// <summary>
   ///    Problem: https://leetcode.com/problems/find-kth-largest-xor-coordinate-value/
