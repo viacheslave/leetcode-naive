@@ -1,24 +1,15 @@
-package vzh;
+package leetcode;
 
-import com.sun.source.tree.Tree;
-import org.w3c.dom.ranges.RangeException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
-import java.awt.dnd.DropTargetDragEvent;
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-public class Main {
-
-  public static void main(String[] arg) {
-    PriorityQueue<Integer> d = new PriorityQueue<>();
-    TreeMap<Integer> f = new TreeMap();
-
-
-  }
-
-  static class Solution {
+/*
+ * Problem: https://leetcode.com/problems/path-with-maximum-probability/
+ * Submission: https://leetcode.com/submissions/detail/419889837/
+ */
+public class P1514 {
+  class Solution {
     class Edge implements Comparable<Edge> {
       public int node;
       public double prob;
@@ -32,9 +23,9 @@ public class Main {
       @Override
       public int compareTo(Edge o) {
         if (o.prob > this.prob)
-          return 1;
-        else if (o.prob < this.prob)
           return -1;
+        else if (o.prob < this.prob)
+          return 1;
         return 0;
       }
     }
@@ -66,10 +57,13 @@ public class Main {
         var node = edge.node;
         var prob = edge.prob;
 
-        if (visited[edge.node])
+        if (visited[node])
           continue;
 
-        visited[edge.node] = true;
+        visited[node] = true;
+
+        if (!e.containsKey(node))
+          continue;
 
         for (Edge child : e.get(node)) {
           if (p.get(child.node) > p.get(node) - child.prob) {
@@ -79,7 +73,7 @@ public class Main {
         }
       }
 
-      if (p.get(end) == Integer.MIN_VALUE)
+      if (!p.containsKey(end) || p.get(end) == Double.MAX_VALUE)
         return 0;
 
       return Math.exp(-p.get(end));

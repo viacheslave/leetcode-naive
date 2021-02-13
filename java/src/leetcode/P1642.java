@@ -1,4 +1,4 @@
-package vzh;
+package leetcode;
 
 import java.util.PriorityQueue;
 import java.util.TreeMap;
