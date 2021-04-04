@@ -35,7 +35,7 @@ namespace LeetCode.Naive
 
       //root.right.right = new TreeNode(1);
 
-      //var res = new Solution().RankTeams(new[] { "AXYB", "AYXB", "AXYB", "AYXB" });
+      //var res = new Solution().RankTeams(new[] { "AXYB', 'AYXB', 'AXYB', 'AYXB" });
       //var res2 = new Solution().MaxSubarraySumCircular(new int[] { 5,4,3,2,1 });
 
 
@@ -63,7 +63,7 @@ namespace LeetCode.Naive
        */
       /*
       var res = new Solution().SmallestSufficientTeam(
-        new[] { "algorithms", "math", "java", "reactjs", "csharp", "aws" },
+        new[] { "algorithms', 'math', 'java', 'reactjs', 'csharp', 'aws" },
         new List<IList<string>>
         {
           new List<string> {"algorithms","math","java"},
@@ -74,125 +74,63 @@ namespace LeetCode.Naive
         }
       );*/
 
-      var res = new Solution().CountSubstrings("abe", "bbc");
-    }
-  }
+      //new Solution().ReverseWords(new[] { 't', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e' });
 
-  public class Solution
-  {
-    public int CountSubstrings(string s, string t)
-    {
-      var ss = new List<string>();
-      var tt = new List<string>();
-
-      for (var i = 0; i < s.Length; i++)
-        for (var j = i; j < s.Length; j++)
-          ss.Add(s.Substring(i, j - i + 1));
-
-      for (var i = 0; i < t.Length; i++)
-        for (var j = i; j < t.Length; j++)
-          tt.Add(t.Substring(i, j - i + 1));
-
-      var smap = ss.GroupBy(x => x).ToDictionary(x => x.Key, x => x.Count());
-      var tmap = tt.GroupBy(x => x).ToDictionary(x => x.Key, x => x.Count());
-
-      var trie = new Trie<char>();
-      foreach (var key in tmap.Keys)
-        trie.Add(key);
-
-      var ans = 0;
-
-      foreach (var str in smap)
-      {
-        var matches = new List<string>();
-        var current = new StringBuilder();
-
-        Traverse(str.Key, -1, trie.Root, matches, current, false);
-
-        ans += str.Value * matches.Select(m => tmap[m]).Sum();
-      }
-
-      return ans;
+      var r = new Solution().MinAbsoluteSumDiff(
+        new[] { 1, 7, 5 },
+        new[] { 2,3,5 }
+       );
     }
 
-    private void Traverse(string str, int pos, TrieNode<char> node, List<string> matches, StringBuilder current, bool changed)
+    public class Solution
     {
-      if (pos == str.Length - 1)
+      public int MinAbsoluteSumDiff(int[] nums1, int[] nums2)
       {
-        if (node.IsEnd && changed)
-          matches.Add(current.ToString());
-
-        return;
-      }
-
-      pos++;
-      var ch = str[pos];
-
-      if (changed)
-      {
-        if (node.Nodes.ContainsKey(str[pos]))
+        var sum = Enumerable.Range(0, nums1.Length).Select(x => (long)Math.Abs(nums1[x] - nums2[x])).Sum();
+        var ans = sum;
+        var arr = nums1.OrderBy(x => x).ToArray();
+        
+        for (var i = 0; i < nums1.Length; ++i)
         {
-          current.Append(ch);
-          Traverse(str, pos, node.Nodes[ch], matches, current, changed);
+          var diff = (long)Math.Abs(nums1[i] - nums2[i]);
 
-          current.Remove(current.Length - 1, 1);
-        } 
-      }
-      else
-      {
-        foreach (var child in node.Nodes)
-        {
-          current.Append(child.Key);
+          var n1 = BinarySearch(arr, nums2[i]);
+          var d1 = (long)Math.Abs(n1 - nums2[i]);
 
-          if (child.Key == ch)
-            Traverse(str, pos, node.Nodes[child.Key], matches, current, changed);
-          else
-            Traverse(str, pos, node.Nodes[child.Key], matches, current, true);
-
-          current.Remove(current.Length - 1, 1);
+          ans = Math.Min(ans, sum - diff + d1);
         }
-      }
-    }
 
-    public class Trie<T>
-    {
-      public TrieNode<T> Root { get; } = new TrieNode<T>(default);
-
-      public void Add(IEnumerable<T> seq)
-      {
-        var current = Root;
-
-        foreach (var element in seq)
-          current = current.Add(element);
-
-        current.SetEnd();
-      }
-    }
-
-    public sealed class TrieNode<T>
-    {
-      public T Value { get; }
-
-      public bool IsEnd { get; private set; }
-
-      public Dictionary<T, TrieNode<T>> Nodes { get; } = new Dictionary<T, TrieNode<T>>();
-
-      public TrieNode(T value)
-      {
-        Value = value;
+        return (int)(ans % 1_000_000_007);
       }
 
-      public void SetEnd() => IsEnd = true;
-
-      public TrieNode<T> Add(T value)
+      private int BinarySearch(int[] arr, int n2)
       {
-        if (Nodes.ContainsKey(value))
-          return Nodes[value];
+        var left = 0;
+        var right = arr.Length - 1;
 
-        var node = new TrieNode<T>(value);
-        Nodes[value] = node;
+        //var diff = arr[(right + left) / 2] - n2;
 
-        return node;
+        while (true)
+        {
+          if (right - left <= 1)
+          {
+            var r = arr[right] - n2;
+            var l = arr[left] - n2;
+
+            if (Math.Abs(l) < Math.Abs(r))
+              return arr[left];
+            else
+              return arr[right];
+          }
+
+          var mid = (right + left) / 2;
+          var d = arr[mid] - n2;
+
+          if (d > 0)
+            right = mid;
+          else
+            left = mid;
+        }
       }
     }
   }
