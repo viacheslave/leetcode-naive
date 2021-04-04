@@ -22,6 +22,4 @@ namespace LeetCode.Naive.Problems
       }
     }
   }
-    }
-  }
 }
